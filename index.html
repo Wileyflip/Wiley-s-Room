@@ -19,7 +19,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:20px 56px;border-bottom:1px solid var(--rule);background:rgba(244,241,236,0.92);backdrop-filter:blur(14px)}
 .nav-back{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s}
 .nav-back:hover{color:var(--ink)}
-.nav-back::before{content:'&#8592;';font-size:1rem}
 .nav-brand{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem}
 .nav-issue{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid)}
 
@@ -49,14 +48,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 
 /* TICKER 1 */
 .ticker-wrap{overflow:hidden;border-bottom:1px solid var(--rule);padding:14px 0;background:var(--ink);width:100%}
-.ticker{display:flex;animation:tick 22s linear infinite;width:max-content}
+.ticker{display:flex;animation:tick 26s linear infinite;width:max-content}
 .tick-item{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;padding:0 36px;color:rgba(244,241,236,0.5);white-space:nowrap}
 .tick-item b{color:var(--paper);font-style:normal;font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.16em}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* TICKER 2 — Reviews, schwarz mit weißer Schrift */
+/* TICKER 2 Reviews */
 .review-ticker-wrap{overflow:hidden;border-bottom:1px solid var(--rule);padding:20px 0;background:var(--ink);width:100%}
-.review-ticker{display:flex;animation:rtick 38s linear infinite;width:max-content}
+.review-ticker{display:flex;animation:rtick 40s linear infinite;width:max-content}
 @keyframes rtick{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .review-item{display:flex;align-items:center;gap:20px;padding:0 48px;white-space:nowrap;border-right:1px solid rgba(244,241,236,0.1)}
 .review-stars{color:var(--paper);font-size:0.8rem;letter-spacing:3px}
@@ -68,12 +67,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .section-head h2{font-family:'Playfair Display',serif;font-weight:900;font-style:italic;font-size:clamp(2rem,4vw,3.5rem)}
 .section-head span{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid)}
 
-/* SPOTIFY */
+/* SPOTIFY FEATURED (groß, 2-spaltig) */
+.spotify-featured{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);width:100%}
+.spotify-featured-item{padding:40px 56px;border-right:1px solid var(--rule)}
+.spotify-featured-item:last-child{border-right:none}
+
+/* SPOTIFY GRID (klein, 2-spaltig) */
 .spotify-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);width:100%}
 .spotify-item{padding:40px 56px;border-right:1px solid var(--rule)}
-.spotify-item:nth-child(2){border-right:none}
-.spotify-item:nth-child(3){border-right:1px solid var(--rule);border-top:1px solid var(--rule)}
-.spotify-item:nth-child(4){border-top:1px solid var(--rule);border-right:none}
+.spotify-item:nth-child(odd):last-child{border-right:none;grid-column:1}
+.spotify-item:nth-child(even){border-right:none}
+
 .spotify-meta{margin-bottom:14px}
 .spotify-artist{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
 .spotify-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem}
@@ -118,7 +122,6 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
 .reveal.on{opacity:1;transform:none}
 
-/* TABLET */
 @media(max-width:900px){
   nav{padding:16px 24px}
   .nav-issue{display:none}
@@ -130,8 +133,10 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   .intro-text-col{padding:48px 24px}
   .intro-body{columns:1}
   .section-head{padding:48px 24px 20px}
+  .spotify-featured{grid-template-columns:1fr}
+  .spotify-featured-item{border-right:none;border-bottom:1px solid var(--rule);padding:28px 24px}
   .spotify-grid{grid-template-columns:1fr}
-  .spotify-item{border-right:none !important;border-top:none !important;border-bottom:1px solid var(--rule);padding:28px 24px}
+  .spotify-item{border-right:none !important;border-bottom:1px solid var(--rule);padding:28px 24px}
   .video-grid{grid-template-columns:1fr}
   .video-wrap{border-right:none;border-bottom:1px solid var(--rule);padding:28px 24px}
   .quote-section{grid-template-columns:1fr;padding:64px 24px}
@@ -141,14 +146,12 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   .cs-cta{width:100%;text-align:center;padding:16px}
   footer{padding:24px;flex-direction:column;gap:8px;text-align:center}
 }
-
-/* MOBILE */
 @media(max-width:480px){
   nav{padding:14px 16px}
   .nav-brand{font-size:0.88rem}
   .cover-left{padding:32px 16px 28px}
   .cover-name{font-size:clamp(3rem,14vw,4.5rem)}
-  .cover-role{font-size:0.62rem;gap:4px}
+  .cover-role{font-size:0.62rem}
   .cover-right{min-height:64vw}
   .intro-text-col{padding:32px 16px}
   .intro-lead{font-size:clamp(1.2rem,5.5vw,1.6rem)}
@@ -157,8 +160,7 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   .review-item{padding:0 28px;gap:12px}
   .review-text{font-size:0.82rem}
   .section-head{padding:32px 16px 14px}
-  .spotify-item{padding:24px 16px}
-  .video-wrap{padding:24px 16px}
+  .spotify-featured-item,.spotify-item,.video-wrap{padding:24px 16px}
   .quote-section{padding:48px 16px}
   .quote-text{font-size:clamp(1.25rem,6vw,1.8rem)}
   .contact-strip{padding:36px 16px;gap:20px}
@@ -171,7 +173,10 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
 <div id="cursor"></div>
 
 <nav>
-  <a href="index.html" class="nav-back">Wiley's Room</a>
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Wiley's Room
+  </a>
   <div class="nav-brand">Wiley's Room</div>
   <div class="nav-issue">Engineer / Vol. 01</div>
 </nav>
@@ -181,7 +186,7 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
     <div class="cover-tag">Wiley's Room — Engineer Profile</div>
     <div><div class="cover-name reveal">Tobias<br><em>Phillipp</em></div></div>
     <div class="cover-role reveal">
-      Pop · Hip-Hop · Rap · R&amp;B · Soul · DnB · Post Punk · <span>&amp; more</span>
+      Pop &middot; Hip-Hop &middot; Rap &middot; R&amp;B &middot; Soul &middot; DnB &middot; Post Punk <span>&amp; more</span>
     </div>
   </div>
   <div class="cover-right">
@@ -196,19 +201,17 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
 
 <div class="content">
 
-  <!-- INTRO -->
   <div class="intro-row">
-    <div class="intro-label-col"><div class="rot-label">&#220;ber mich</div></div>
+    <div class="intro-label-col"><div class="rot-label">Über mich</div></div>
     <div class="intro-text-col">
-      <p class="intro-lead reveal">&#8222;Ich h&#246;re einen Track und wei&#223; innerhalb von Sekunden, wo er hin muss.&#8220;</p>
+      <p class="intro-lead reveal">&bdquo;Ich höre einen Track und weiß innerhalb von Sekunden, wo er hin muss.&ldquo;</p>
       <div class="intro-body reveal">
-        <p>Ich bin Mixing &amp; Mastering Engineer mit einem tiefen Verst&#228;ndnis f&#252;r elektronische Produktionen, Pop-Songwriting und die rohe Energie von Hip-Hop. Was als Leidenschaft f&#252;r Musik begann, wurde zu einem Handwerk &#8212; pr&#228;zise, intuitiv und konsequent auf den K&#252;nstler ausgerichtet.</p>
-        <p>Mit jahrelanger Erfahrung in der Post-Produktion habe ich ein Ohr f&#252;r Details entwickelt, das weit &#252;ber Technik hinausgeht. Mein Ansatz: Den emotionalen Kern eines Songs sch&#252;tzen und gleichzeitig jeden Frequenzbereich auf Hochglanz bringen.</p>
+        <p>Ich bin Mixing &amp; Mastering Engineer mit einem tiefen Verständnis für elektronische Produktionen, Pop-Songwriting und die rohe Energie von Hip-Hop. Was als Leidenschaft für Musik begann, wurde zu einem Handwerk &mdash; präzise, intuitiv und konsequent auf den Künstler ausgerichtet.</p>
+        <p>Mit jahrelanger Erfahrung in der Post-Produktion habe ich ein Ohr für Details entwickelt, das weit über Technik hinausgeht. Mein Ansatz: Den emotionalen Kern eines Songs schützen und gleichzeitig jeden Frequenzbereich auf Hochglanz bringen.</p>
       </div>
     </div>
   </div>
 
-  <!-- TICKER 1 -->
   <div class="ticker-wrap">
     <div class="ticker">
       <span class="tick-item"><b>Mixing</b></span>
@@ -244,48 +247,47 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
     </div>
   </div>
 
-  <!-- TICKER 2: Reviews — schwarz, wei&#223;e Schrift -->
   <div class="review-ticker-wrap">
     <div class="review-ticker">
       <div class="review-item">
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-text">&#8222;Tobias hat meinen Sound auf ein Level gebracht, das ich nicht f&#252;r m&#246;glich gehalten h&#228;tte.&#8220;</span>
-        <span class="review-author">&#8212; Fraenko</span>
+        <span class="review-text">&bdquo;Tobias hat meinen Sound auf ein Level gebracht, das ich nicht für möglich gehalten hätte.&ldquo;</span>
+        <span class="review-author">&mdash; Fraenko</span>
       </div>
       <div class="review-item">
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-text">&#8222;Der Mix klingt wie eine Major-Produktion. Inneres Kind w&#228;re ohne ihn nie so geworden.&#8220;</span>
-        <span class="review-author">&#8212; Belli</span>
+        <span class="review-text">&bdquo;Der Mix klingt wie eine Major-Produktion. Inneres Kind wäre ohne ihn nie so geworden.&ldquo;</span>
+        <span class="review-author">&mdash; Belli</span>
       </div>
       <div class="review-item">
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-text">&#8222;Professionell, schnell und er versteht was ein Track braucht &#8212; ohne dass man viel erkl&#228;ren muss.&#8220;</span>
-        <span class="review-author">&#8212; Mic Bless</span>
+        <span class="review-text">&bdquo;Professionell, schnell und er versteht was ein Track braucht &mdash; ohne dass man viel erklären muss.&ldquo;</span>
+        <span class="review-author">&mdash; Mic Bless</span>
       </div>
       <div class="review-item">
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-text">&#8222;Fast ein Wunder Freestyle klingt im Auto, auf Kopfh&#246;rern, &#252;berall. Das ist sein Verdienst.&#8220;</span>
-        <span class="review-author">&#8212; Der400</span>
+        <span class="review-text">&bdquo;Fast ein Wunder Freestyle klingt im Auto, auf Kopfhörern, überall. Das ist sein Verdienst.&ldquo;</span>
+        <span class="review-author">&mdash; Der400</span>
       </div>
       <div class="review-item">
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-text">&#8222;Tobias hat meinen Sound auf ein Level gebracht, das ich nicht f&#252;r m&#246;glich gehalten h&#228;tte.&#8220;</span>
-        <span class="review-author">&#8212; Fraenko</span>
+        <span class="review-text">&bdquo;Tobias hat meinen Sound auf ein Level gebracht, das ich nicht für möglich gehalten hätte.&ldquo;</span>
+        <span class="review-author">&mdash; Fraenko</span>
       </div>
       <div class="review-item">
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-text">&#8222;Der Mix klingt wie eine Major-Produktion. Inneres Kind w&#228;re ohne ihn nie so geworden.&#8220;</span>
-        <span class="review-author">&#8212; Belli</span>
+        <span class="review-text">&bdquo;Der Mix klingt wie eine Major-Produktion. Inneres Kind wäre ohne ihn nie so geworden.&ldquo;</span>
+        <span class="review-author">&mdash; Belli</span>
       </div>
       <div class="review-item">
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-text">&#8222;Professionell, schnell und er versteht was ein Track braucht &#8212; ohne dass man viel erkl&#228;ren muss.&#8220;</span>
-        <span class="review-author">&#8212; Mic Bless</span>
+        <span class="review-text">&bdquo;Professionell, schnell und er versteht was ein Track braucht &mdash; ohne dass man viel erklären muss.&ldquo;</span>
+        <span class="review-author">&mdash; Mic Bless</span>
       </div>
       <div class="review-item">
         <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="review-text">&#8222;Fast ein Wunder Freestyle klingt im Auto, auf Kopfh&#246;rern, &#252;berall. Das ist sein Verdienst.&#8220;</span>
-        <span class="review-author">&#8212; Der400</span>
+        <span class="review-text">&bdquo;Fast ein Wunder Freestyle klingt im Auto, auf Kopfhörern, überall. Das ist sein Verdienst.&ldquo;</span>
+        <span class="review-author">&mdash; Der400</span>
       </div>
     </div>
   </div>
@@ -293,17 +295,29 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   <!-- REFERENZEN -->
   <div class="section-head reveal">
     <h2>Referenzen</h2>
-    <span>Ausgew&#228;hlte Projekte</span>
+    <span>Ausgewählte Projekte</span>
   </div>
 
-  <div class="spotify-grid">
-    <div class="spotify-item reveal">
+  <!-- FEATURED: Fraenko + Mic Bless groß -->
+  <div class="spotify-featured">
+    <div class="spotify-featured-item reveal">
       <div class="spotify-meta">
         <div class="spotify-artist">Fraenko</div>
         <div class="spotify-title">Mask Off (Album)</div>
       </div>
-      <iframe style="border-radius:4px" src="https://open.spotify.com/embed/album/7B8mc77oJMdgSnTUPEFGJr?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:4px" src="https://open.spotify.com/embed/album/7B8mc77oJMdgSnTUPEFGJr?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
+    <div class="spotify-featured-item reveal">
+      <div class="spotify-meta">
+        <div class="spotify-artist">Mic Bless x Maniac</div>
+        <div class="spotify-title">Artistofficial Intelligent</div>
+      </div>
+      <iframe style="border-radius:4px" src="https://open.spotify.com/embed/album/3DBB4E6IBFxGqHCySKooDf?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- SMALL GRID: die restlichen -->
+  <div class="spotify-grid">
     <div class="spotify-item reveal">
       <div class="spotify-meta">
         <div class="spotify-artist">Belli</div>
@@ -313,20 +327,28 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
     </div>
     <div class="spotify-item reveal">
       <div class="spotify-meta">
-        <div class="spotify-artist">Mic Bless x Maniac</div>
-        <div class="spotify-title">Artistofficial Intelligent</div>
+        <div class="spotify-artist">Der400 x Rawbin</div>
+        <div class="spotify-title">Fast ein Wunder Freestyle</div>
       </div>
       <iframe style="border-radius:4px" src="https://open.spotify.com/embed/track/222owXhtxvGPFqRJTP2i2u?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <div class="spotify-item reveal">
       <div class="spotify-meta">
-        <div class="spotify-artist">Der400 x Rawbin</div>
-        <div class="spotify-title">Fast ein Wunder Freestyle</div>
+        <div class="spotify-artist">Joachim Foenix &amp; Phil Dee</div>
+        <div class="spotify-title">Große Gesten</div>
       </div>
-      <iframe style="border-radius:4px" src="https://open.spotify.com/embed/album/3DBB4E6IBFxGqHCySKooDf?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:4px" src="https://open.spotify.com/embed/album/5neskgl9bUVIPH4XDUWAxC?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="spotify-item reveal">
+      <div class="spotify-meta">
+        <div class="spotify-artist">Rawbin</div>
+        <div class="spotify-title">Rough EP</div>
+      </div>
+      <iframe style="border-radius:4px" src="https://open.spotify.com/embed/album/1Y6GsiO04h8XmoK4h92zpK?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
 
+  <!-- VIDEOS -->
   <div class="video-grid">
     <div class="video-wrap reveal">
       <div class="video-meta">
@@ -345,7 +367,7 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
         <div class="video-meta-title">Artistofficial Intelligent</div>
       </div>
       <a class="video-thumb" href="https://www.youtube.com/watch?v=snxHih8sQLE" target="_blank" rel="noopener">
-        <img src="https://img.youtube.com/vi/snxHih8sQLE/maxresdefault.jpg" alt="Mic Bless x Maniac - Artistofficial Intelligent"/>
+        <img src="https://img.youtube.com/vi/snxHih8sQLE/maxresdefault.jpg" alt="Mic Bless x Maniac"/>
         <div class="video-play-btn"><span>&#9654;</span></div>
       </a>
       <div class="video-caption">Auf YouTube ansehen <b>&#8594;</b></div>
@@ -356,8 +378,8 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   <div class="quote-section reveal">
     <div class="quote-divider"><span></span><small>Philosophie</small></div>
     <div>
-      <p class="quote-text">&#8222;Ein guter Mix f&#252;hlt sich nicht nach Arbeit an &#8212; er f&#252;hlt sich nach dem Song an.&#8220;</p>
-      <p class="quote-author">&#8212; Tobias Phillipp, Mixing &amp; Mastering Engineer</p>
+      <p class="quote-text">&bdquo;Ein guter Mix fühlt sich nicht nach Arbeit an &mdash; er fühlt sich nach dem Song an.&ldquo;</p>
+      <p class="quote-author">&mdash; Tobias Phillipp, Mixing &amp; Mastering Engineer</p>
     </div>
   </div>
 
@@ -376,7 +398,7 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
 </div>
 
 <footer>
-  <small>&#169; 2026 Tobias Phillipp &#8212; Wiley's Room</small>
+  <small>&copy; 2026 Tobias Phillipp &mdash; Wiley's Room</small>
   <small>tobias@wileyroom.de</small>
 </footer>
 
