@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<!-- saved from url=(0054)file:///C:/Users/Tobi/Downloads/tobias-phillipp_6.html -->
-<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Tobias Phillipp — Wiley's Room</title>
-<link href="./Tobias Phillipp — Wiley&#39;s Room_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#0a0a0a;--paper:#f4f1ec;--mid:#888880;--rule:rgba(10,10,10,0.12)}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'DM Mono',monospace;font-weight:300;overflow-x:hidden}
-
 #cursor{display:none;position:fixed;width:8px;height:8px;background:var(--ink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:multiply}
 @media(hover:hover){#cursor{display:block}body{cursor:none}}
 #cursor.big{width:44px;height:44px}
-
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:0.04;pointer-events:none;z-index:9000}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:20px 56px;border-bottom:1px solid var(--rule);background:rgba(244,241,236,0.92);backdrop-filter:blur(14px)}
@@ -55,7 +53,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .section-head h2{font-family:'Playfair Display',serif;font-weight:900;font-style:italic;font-size:clamp(2rem,4vw,3.5rem)}
 .section-head span{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid)}
 
-/* REFERENZEN */
 .ref-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
 .ref-col{padding:48px 56px;border-right:1px solid var(--rule)}
 .ref-col:last-child{border-right:none}
@@ -65,28 +62,31 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .ref-list li:last-child{border-bottom:none}
 .ref-genre{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid)}
 
-/* VIDEOS */
 .video-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
 .video-wrap{padding:40px 56px;border-right:1px solid var(--rule)}
 .video-wrap:last-child{border-right:none}
 .video-label{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--mid);margin-bottom:16px}
-.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--rule)}
-.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-thumb{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;display:block;text-decoration:none;border:1px solid var(--rule)}
+.video-thumb img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.video-thumb:hover img{opacity:0.75}
+.video-play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2}
+.video-play-btn span{width:60px;height:60px;background:rgba(10,10,10,0.82);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--paper);transition:transform .3s,background .3s}
+.video-thumb:hover .video-play-btn span{transform:scale(1.12);background:var(--ink)}
+.video-caption{margin-top:12px;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid)}
+.video-caption b{color:var(--ink)}
 
-/* DEMO */
 .demo-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
 .demo-col{padding:48px 56px;border-right:1px solid var(--rule)}
 .demo-col:last-child{border-right:none}
 .demo-col-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--mid);margin-bottom:20px}
 .demo-col h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;margin-bottom:16px;margin-top:28px}
 .demo-col h3:first-of-type{margin-top:0}
-.demo-player{background:var(--ink);padding:24px;display:flex;flex-direction:column;gap:12px;margin-bottom:4px}
+.demo-player{background:var(--ink);padding:24px;display:flex;flex-direction:column;gap:12px}
 .demo-track{display:flex;align-items:center;gap:14px;color:rgba(244,241,236,0.5);font-size:0.7rem;letter-spacing:0.1em}
 .demo-play{width:34px;height:34px;border:1px solid rgba(244,241,236,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.7rem;color:rgba(244,241,236,0.4)}
 .demo-bar{height:36px;background:rgba(244,241,236,0.04);border:1px solid rgba(244,241,236,0.07);display:flex;align-items:center;justify-content:center;font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,241,236,0.18)}
 .demo-note{font-size:0.62rem;color:var(--mid);margin-top:14px;font-style:italic;line-height:1.6}
 
-/* QUOTE */
 .quote-section{background:var(--ink);color:var(--paper);padding:100px 56px;display:grid;grid-template-columns:120px 1fr;gap:56px;align-items:start}
 .quote-divider{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:8px}
 .quote-divider span{width:1px;height:80px;background:rgba(244,241,236,0.2)}
@@ -94,7 +94,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .quote-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.6rem,3.5vw,3rem);line-height:1.35;font-weight:400}
 .quote-author{margin-top:36px;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,241,236,0.4)}
 
-/* CONTACT */
 .contact-strip{display:flex;justify-content:space-between;align-items:center;padding:60px 56px;border-bottom:1px solid var(--rule)}
 .cs-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2rem,4vw,3.5rem);max-width:500px;line-height:1.1}
 .cs-cta{display:inline-block;flex-shrink:0;background:var(--ink);color:var(--paper);padding:18px 48px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:background .3s}
@@ -117,17 +116,13 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   .intro-text-col{padding:48px 28px}
   .intro-body{columns:1;max-width:100%}
   .section-head{padding:48px 28px 24px}
-  .ref-grid{grid-template-columns:1fr}
-  .ref-col{border-right:none;border-bottom:1px solid var(--rule);padding:36px 28px}
-  .video-grid{grid-template-columns:1fr}
-  .video-wrap{border-right:none;border-bottom:1px solid var(--rule);padding:32px 28px}
-  .demo-grid{grid-template-columns:1fr}
-  .demo-col{border-right:none;border-bottom:1px solid var(--rule);padding:36px 28px}
+  .ref-grid,.video-grid,.demo-grid{grid-template-columns:1fr}
+  .ref-col,.video-wrap,.demo-col{border-right:none;border-bottom:1px solid var(--rule);padding:36px 28px}
   .quote-section{grid-template-columns:1fr;padding:72px 28px}
   .quote-divider{display:none}
   .contact-strip{flex-direction:column;align-items:flex-start;gap:28px;padding:48px 28px}
   .cs-cta{width:100%;text-align:center}
-  footer{padding:28px 28px;flex-direction:column;gap:8px;text-align:center}
+  footer{padding:28px;flex-direction:column;gap:8px;text-align:center}
 }
 
 @media(max-width:480px){
@@ -142,9 +137,7 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   .intro-body{font-size:0.78rem}
   .tick-item{font-size:0.88rem;padding:0 22px}
   .section-head{padding:36px 20px 16px}
-  .ref-col{padding:28px 20px}
-  .video-wrap{padding:24px 20px}
-  .demo-col{padding:28px 20px}
+  .ref-col,.video-wrap,.demo-col{padding:28px 20px}
   .quote-section{padding:52px 20px}
   .quote-text{font-size:clamp(1.35rem,5.8vw,1.9rem)}
   .contact-strip{padding:40px 20px;gap:24px}
@@ -155,10 +148,10 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
 </style>
 </head>
 <body>
-<div id="cursor" style="left: 1484px; top: 4px;"></div>
+<div id="cursor"></div>
 
 <nav>
-  <a href="file:///C:/Users/Tobi/Downloads/index.html" class="nav-back">Wiley's Room</a>
+  <a href="index.html" class="nav-back">Wiley's Room</a>
   <div class="nav-brand">Wiley's Room</div>
   <div class="nav-issue">Engineer / Vol. 01</div>
 </nav>
@@ -167,17 +160,17 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   <div class="cover-left">
     <div class="cover-tag">Wiley's Room — Engineer Profile</div>
     <div>
-      <div class="cover-name reveal on">Tobias<br><em>Phillipp</em></div>
+      <div class="cover-name reveal">Tobias<br><em>Phillipp</em></div>
     </div>
-    <div class="cover-role reveal on">
+    <div class="cover-role reveal">
       <span>Mixing &amp; Mastering Engineer</span>
       <span>Electronic · Pop · Hip-Hop</span>
     </div>
   </div>
   <div class="cover-right">
-    <canvas id="coverCanvas" width="953" height="872"></canvas>
+    <canvas id="coverCanvas"></canvas>
     <div class="cover-monogram">TP</div>
-    <div class="cover-right-content reveal on">
+    <div class="cover-right-content reveal">
       <div class="big-num">Nr.01</div>
       <div class="caption">Wiley's Room Engineer</div>
     </div>
@@ -186,7 +179,6 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
 
 <div class="content">
 
-  <!-- INTRO -->
   <div class="intro-row">
     <div class="intro-label-col"><div class="rot-label">Über mich</div></div>
     <div class="intro-text-col">
@@ -198,7 +190,6 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
     </div>
   </div>
 
-  <!-- TICKER -->
   <div class="ticker-wrap">
     <div class="ticker">
       <span class="tick-item"><b>Mixing</b></span>
@@ -218,7 +209,6 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
     </div>
   </div>
 
-  <!-- REFERENZEN -->
   <div class="section-head reveal">
     <h2>Referenz-Genres &amp; Künstler</h2>
     <span>Mein Klang-Universum</span>
@@ -246,7 +236,6 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
     </div>
   </div>
 
-  <!-- VIDEOS -->
   <div class="section-head reveal">
     <h2>Meine Arbeit</h2>
     <span>Hör selbst rein</span>
@@ -254,19 +243,22 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   <div class="video-grid">
     <div class="video-wrap reveal">
       <div class="video-label">[ Video 01 ]</div>
-      <div class="video-embed">
-        <iframe src="./Tobias Phillipp — Wiley&#39;s Room_files/tRWjFzUbiUo.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-      </div>
+      <a class="video-thumb" href="https://www.youtube.com/watch?v=tRWjFzUbiUo" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/tRWjFzUbiUo/maxresdefault.jpg" alt="Video 01"/>
+        <div class="video-play-btn"><span>▶</span></div>
+      </a>
+      <div class="video-caption">Auf YouTube ansehen <b>→</b></div>
     </div>
     <div class="video-wrap reveal">
       <div class="video-label">[ Video 02 ]</div>
-      <div class="video-embed">
-        <iframe src="./Tobias Phillipp — Wiley&#39;s Room_files/snxHih8sQLE.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-      </div>
+      <a class="video-thumb" href="https://www.youtube.com/watch?v=snxHih8sQLE" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/snxHih8sQLE/maxresdefault.jpg" alt="Video 02"/>
+        <div class="video-play-btn"><span>▶</span></div>
+      </a>
+      <div class="video-caption">Auf YouTube ansehen <b>→</b></div>
     </div>
   </div>
 
-  <!-- DEMO VORHER / NACHHER -->
   <div class="section-head reveal">
     <h2>Vorher / Nachher</h2>
     <span>Mix · Master Demo</span>
@@ -284,7 +276,7 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
         <div class="demo-track"><div class="demo-play">▶</div>Fertiger Mix — bearbeitet</div>
         <div class="demo-bar">Audio-Link folgt</div>
       </div>
-      <p class="demo-note">Schick mir deinen Audio-Link (SoundCloud, Dropbox etc.) — ich baue ihn direkt ein.</p>
+      <p class="demo-note">Schick mir deinen Audio-Link — ich baue ihn direkt ein.</p>
     </div>
     <div class="demo-col reveal">
       <div class="demo-col-label">[ Master Demo ]</div>
@@ -298,11 +290,10 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
         <div class="demo-track"><div class="demo-play">▶</div>Fertiges Master</div>
         <div class="demo-bar">Audio-Link folgt</div>
       </div>
-      <p class="demo-note">Schick mir deinen Audio-Link (SoundCloud, Dropbox etc.) — ich baue ihn direkt ein.</p>
+      <p class="demo-note">Schick mir deinen Audio-Link — ich baue ihn direkt ein.</p>
     </div>
   </div>
 
-  <!-- QUOTE -->
   <div class="quote-section reveal">
     <div class="quote-divider"><span></span><small>Philosophie</small></div>
     <div>
@@ -311,10 +302,9 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
     </div>
   </div>
 
-  <!-- CONTACT -->
   <div class="contact-strip">
     <div class="cs-title reveal">Lass uns zusammenarbeiten.</div>
-    <a href="file:///C:/Users/Tobi/Downloads/index.html#contact" class="cs-cta">Projekt anfragen →</a>
+    <a href="index.html#contact" class="cs-cta">Projekt anfragen →</a>
   </div>
 
 </div>
@@ -326,7 +316,6 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
 
 <script>
 (function() {
-  // CURSOR
   if (window.matchMedia('(hover: hover)').matches) {
     var cur = document.getElementById('cursor');
     document.addEventListener('mousemove', function(e) {
@@ -339,7 +328,6 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
     });
   }
 
-  // CANVAS
   var cv = document.getElementById('coverCanvas');
   var cx = cv.getContext('2d');
   function resize() { cv.width = cv.offsetWidth; cv.height = cv.offsetHeight; }
@@ -366,7 +354,6 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   }
   draw();
 
-  // REVEAL
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry, idx) {
       if (entry.isIntersecting) {
@@ -383,6 +370,5 @@ footer small{font-size:0.62rem;letter-spacing:0.14em;color:var(--mid)}
   });
 })();
 </script>
-
-
-</body></html>
+</body>
+</html>
