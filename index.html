@@ -570,6 +570,9 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
 <div id="cursor"></div>
 
 <nav style="justify-content:center;">
+  <a href="https://www.instagram.com/klang2_mixandmaster/" target="_blank" rel="noopener" style="position:absolute; left:56px; top:50%; transform:translateY(-50%); color:var(--ink); opacity:0.5; transition:opacity .2s; display:flex; align-items:center;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+  </a>
   <div class="nav-logo">Klang<sup>²</sup></div>
   <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
 </nav>
@@ -584,7 +587,7 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
         <p class="cover-deck reveal"><span class="lang-de">Präzises Mixing und transparentes Mastering für Künstler, die keine Kompromisse kennen. Von der Rohspur zur vollendeten Produktion.</span><span class="lang-en" style="display:none">Precise mixing and transparent mastering for artists who know no compromise. From the raw track to the finished production.</span></p>
       </div>
       <div class="cover-cta-row reveal">
-        <a href="/cdn-cgi/l/email-protection#d8b0bdb4b4b798b3b4b9b6bfeaf6bcbd" class="btn-primary"><span class="lang-de">Projekt anfragen</span><span class="lang-en" style="display:none">Start a Project</span></a>
+        <a href="mailto:hello@klang2.de" class="btn-primary"><span class="lang-de">Projekt anfragen</span><span class="lang-en" style="display:none">Start a Project</span></a>
         <a href="#team" class="btn-ghost"><span class="lang-de">Das Team</span><span class="lang-en" style="display:none">The Team</span></a>
       </div>
     </div>
@@ -801,10 +804,6 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
       David Hirschfeld
     </a>
-    <a href="https://www.instagram.com/klang2_mixandmaster/" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink); opacity:0.7; transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-      Klang²
-    </a>
   </div>
   <div class="footer-copy"><span class="lang-de">© 2026 Klang² — Mixing & Mastering</span><span class="lang-en" style="display:none">© 2026 Klang² — Mixing & Mastering</span></div>
   <div class="footer-disclaimer">
@@ -815,7 +814,7 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function toggleLang() {
     const btn = document.getElementById('langToggle');
     const isDE = btn.textContent === 'EN';
@@ -886,4 +885,9 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  document.getElementById('sub
+  document.getElementById('submitBtn').addEventListener('click', () => {
+    document.getElementById('submitBtn').textContent = 'Gesendet ✓';
+  });
+</script>
+</body>
+</html>
