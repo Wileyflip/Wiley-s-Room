@@ -31,6 +31,7 @@
     }
 
     /* CURSOR */
+    .dark-section ~ * #cursor, .dark-section #cursor { background: var(--paper); }
     #cursor {
       position: fixed; width: 8px; height: 8px;
       background: var(--ink); border-radius: 50%;
@@ -474,7 +475,9 @@
       .video-wrap:last-child { border-bottom: none; }
       .review-wrap { width: 100%; overflow: hidden; }
       .review-item { padding: 0 20px; font-size: 0.62rem; }
-      .ticker-wrap { display: none; }
+      #kontakt > div { grid-template-columns: 1fr !important; }
+      #kontakt > div > div { padding: 48px 20px !important; border-right: none !important; }
+      #kontakt h2 { font-size: clamp(2rem,10vw,3rem) !important; }
       footer { grid-template-columns: 1fr; padding: 28px 20px; gap: 12px; text-align: center; width: 100%; }
       .footer-links { justify-content: center; flex-wrap: wrap; gap: 12px; }
       .footer-copy { text-align: center; }
@@ -567,6 +570,9 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
 <div id="cursor"></div>
 
 <nav style="justify-content:center;">
+  <a href="https://www.instagram.com/klang2_mixandmaster/" target="_blank" rel="noopener" style="position:absolute; left:56px; top:50%; transform:translateY(-50%); color:var(--ink); opacity:0.5; transition:opacity .2s; display:flex; align-items:center;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+  </a>
   <div class="nav-logo">Klang<sup>²</sup></div>
   <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
 </nav>
@@ -581,7 +587,7 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
         <p class="cover-deck reveal"><span class="lang-de">Präzises Mixing und transparentes Mastering für Künstler, die keine Kompromisse kennen. Von der Rohspur zur vollendeten Produktion.</span><span class="lang-en" style="display:none">Precise mixing and transparent mastering for artists who know no compromise. From the raw track to the finished production.</span></p>
       </div>
       <div class="cover-cta-row reveal">
-        <a href="#contact" class="btn-primary"><span class="lang-de">Projekt anfragen</span><span class="lang-en" style="display:none">Start a Project</span></a>
+        <a href="mailto:hello@klang2.de" class="btn-primary"><span class="lang-de">Projekt anfragen</span><span class="lang-en" style="display:none">Start a Project</span></a>
         <a href="#team" class="btn-ghost"><span class="lang-de">Das Team</span><span class="lang-en" style="display:none">The Team</span></a>
       </div>
     </div>
@@ -628,8 +634,8 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
         <div class="tc-vol">Vol. 01 — Engineer</div>
         <div class="tc-name">Tobias<br><em>Phillipp</em></div>
         <div class="tc-line"></div>
-        <div class="tc-role">Mixing Engineer</div>
-        <div class="tc-desc">Electronic, Pop & Hip-Hop. <span class="lang-de">Präzision trifft Intuition — Tobias bringt jeden Track an seinen richtigen Ort.</span><span class="lang-en" style="display:none">Precision meets intuition — Tobias brings every track to exactly the right place.</span></div>
+        <div class="tc-role">Mixing & Mastering Engineer</div>
+        <div class="tc-desc"><span class="lang-de">Ich komme aus R&B, Soul und Hip-Hop — mit elektronischen Einflüssen, die ich über Jahre entwickelt habe. Ich bin der kreative Kopf: nah am Künstler, stark in der Session-Arbeit und im Sounddesign. Was als Leidenschaft begann, ist heute mein Handwerk — präzise, intuitiv und immer auf den Menschen hinter der Musik ausgerichtet.</span><span class="lang-en" style="display:none">I come from R&B, Soul and Hip-Hop — with electronic influences I've developed over the years. I'm the creative force: close to the artist, strong in session work and sound design. What started as passion is now my craft — precise, intuitive, always centred on the person behind the music.</span></div>
         <div class="tc-arrow"><span class="lang-de">Profil ansehen</span><span class="lang-en" style="display:none">View Profile</span></div>
       </a>
       <a href="david-hirschfeld.html" class="team-card reveal" id="card-david">
@@ -637,8 +643,8 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
         <div class="tc-vol">Vol. 02 — Engineer</div>
         <div class="tc-name">David<br><em>Hirschfeld</em></div>
         <div class="tc-line"></div>
-        <div class="tc-role">Mixing Engineer</div>
-        <div class="tc-desc">Electronic, Pop & Hip-Hop. <span class="lang-de">David kuratiert Klang — analytisch, kreativ und immer im Dienst des Songs.</span><span class="lang-en" style="display:none">David curates sound — analytical, creative and always in service of the song.</span></div>
+        <div class="tc-role">Mixing & Mastering Engineer</div>
+        <div class="tc-desc"><span class="lang-de">Ich komme aus dem Techno und der elektronischen Musik — habe aber auch in Pop und Hip-Hop mein Zuhause gefunden. Ich bin der technisch-analytische Teil des Duos: präzise in der Entscheidung, ruhig im Urteil und fokussiert auf das, was ein Mix wirklich braucht. Zusammen decken wir das volle Spektrum ab — von der Rohspur bis zum fertigen Master.</span><span class="lang-en" style="display:none">I come from Techno and electronic music — but have found my footing in Pop and Hip-Hop too. I'm the technical, analytical half of the duo: precise in my decisions, steady in my judgement, focused on what a mix truly needs. Together we cover the full spectrum — from raw track to finished master.</span></div>
         <div class="tc-arrow"><span class="lang-de">Profil ansehen</span><span class="lang-en" style="display:none">View Profile</span></div>
       </a>
     </div>
@@ -686,15 +692,15 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
 <!-- REVIEWS -->
 <div class="review-wrap">
   <div class="review-ticker">
-    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Klang² hat meinen Sound auf ein Level gebracht, das ich nicht für möglich gehalten hätte."</span><span class="lang-en" style="display:none">"Klang² took my sound to a level I never thought possible."</span> <span class="review-sep">—</span> Fraenko</div>
-    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Der Mix klingt wie eine Major-Produktion. Inneres Kind wäre ohne sie nie so geworden."</span><span class="lang-en" style="display:none">"The mix sounds like a major production. Inneres Kind would never have become what it is without them."</span> <span class="review-sep">—</span> Belli</div>
-    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Professionell, schnell und sie verstehen was ein Track braucht — ohne dass man viel erklären muss."</span><span class="lang-en" style="display:none">"Professional, fast, and they understand what a track needs — without having to explain much."</span> <span class="review-sep">—</span> Mic Bless</div>
-    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Fast ein Wunder Freestyle klingt im Auto, auf Kopfhörern, überall. Das ist ihr Verdienst."</span><span class="lang-en" style="display:none">"Fast ein Wunder Freestyle sounds great in the car, on headphones, everywhere. That's their doing."</span> <span class="review-sep">—</span> Der400</div>
+    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Die Jungs haben das komplette Album betreut — ich hab mich von Anfang an mega aufgehoben gefühlt und das Endprodukt hat alle Erwartungen übertroffen."</span><span class="lang-en" style="display:none">"They handled the whole album — I felt completely taken care of from day one and the final product exceeded every expectation."</span> <span class="review-sep">—</span> Fraenko</div>
+    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Mix und Master von Klang² — Inneres Kind klingt wie eine Major-Produktion. Ohne die zwei wäre der Track nie so geworden."</span><span class="lang-en" style="display:none">"Mix and master by Klang² — Inneres Kind sounds like a major production. Without those two, the track would never have become what it is."</span> <span class="review-sep">—</span> Belli</div>
+    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Mit dem Mastering von der Rough EP war ich wirklich sehr zufrieden — der Sound saß genau da, wo ich ihn wollte."</span><span class="lang-en" style="display:none">"The mastering of Rough EP was exactly what I wanted — the sound sat right where it needed to."</span> <span class="review-sep">—</span> Mic Bless</div>
+    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Der vintage Klang ist geblieben, aber der Sound hat eine heftige Kraft entwickelt — auch auf großen Boxen macht das richtig was."</span><span class="lang-en" style="display:none">"The vintage vibe stayed intact, but the sound has serious power — it hits hard on big speakers too."</span> <span class="review-sep">—</span> Mic Bless</div>
     <!-- duplicate for seamless loop -->
-    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Klang² hat meinen Sound auf ein Level gebracht, das ich nicht für möglich gehalten hätte."</span><span class="lang-en" style="display:none">"Klang² took my sound to a level I never thought possible."</span> <span class="review-sep">—</span> Fraenko</div>
-    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Der Mix klingt wie eine Major-Produktion. Inneres Kind wäre ohne sie nie so geworden."</span><span class="lang-en" style="display:none">"The mix sounds like a major production. Inneres Kind would never have become what it is without them."</span> <span class="review-sep">—</span> Belli</div>
-    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Professionell, schnell und sie verstehen was ein Track braucht — ohne dass man viel erklären muss."</span><span class="lang-en" style="display:none">"Professional, fast, and they understand what a track needs — without having to explain much."</span> <span class="review-sep">—</span> Mic Bless</div>
-    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Fast ein Wunder Freestyle klingt im Auto, auf Kopfhörern, überall. Das ist ihr Verdienst."</span><span class="lang-en" style="display:none">"Fast ein Wunder Freestyle sounds great in the car, on headphones, everywhere. That's their doing."</span> <span class="review-sep">—</span> Der400</div>
+    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Die Jungs haben das komplette Album betreut — ich hab mich von Anfang an mega aufgehoben gefühlt und das Endprodukt hat alle Erwartungen übertroffen."</span><span class="lang-en" style="display:none">"They handled the whole album — I felt completely taken care of from day one and the final product exceeded every expectation."</span> <span class="review-sep">—</span> Fraenko</div>
+    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Mix und Master von Klang² — Inneres Kind klingt wie eine Major-Produktion. Ohne die zwei wäre der Track nie so geworden."</span><span class="lang-en" style="display:none">"Mix and master by Klang² — Inneres Kind sounds like a major production. Without those two, the track would never have become what it is."</span> <span class="review-sep">—</span> Belli</div>
+    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Mit dem Mastering von der Rough EP war ich wirklich sehr zufrieden — der Sound saß genau da, wo ich ihn wollte."</span><span class="lang-en" style="display:none">"The mastering of Rough EP was exactly what I wanted — the sound sat right where it needed to."</span> <span class="review-sep">—</span> Mic Bless</div>
+    <div class="review-item"><span class="stars">★★★★★</span> <span class="lang-de">„Der vintage Klang ist geblieben, aber der Sound hat eine heftige Kraft entwickelt — auch auf großen Boxen macht das richtig was."</span><span class="lang-en" style="display:none">"The vintage vibe stayed intact, but the sound has serious power — it hits hard on big speakers too."</span> <span class="review-sep">—</span> Mic Bless</div>
   </div>
 </div>
 
@@ -779,11 +785,25 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
 
 
 <!-- FOOTER -->
+
+<!-- KONTAKT -->
+
+
+
+
+
+
 <footer>
   <div class="footer-logo">Klang<sup>²</sup></div>
   <div class="footer-links">
-    <a href="tobias-phillipp.html">Tobias Phillipp</a>
-    <a href="david-hirschfeld.html">David Hirschfeld</a>
+    <a href="https://www.instagram.com/prod_by_wiley/" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink); opacity:0.7; transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      Tobias Phillipp
+    </a>
+    <a href="https://www.instagram.com/dmg_coda/" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink); opacity:0.7; transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      David Hirschfeld
+    </a>
   </div>
   <div class="footer-copy"><span class="lang-de">© 2026 Klang² — Mixing & Mastering</span><span class="lang-en" style="display:none">© 2026 Klang² — Mixing & Mastering</span></div>
   <div class="footer-disclaimer">
@@ -805,7 +825,11 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
 </script>
 <script>
   const cur = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
+  document.querySelectorAll('.dark-section').forEach(sec => {
+        // kontakt is now light, skip cursor invert
+        
+      });
+      document.addEventListener('mousemove', e => {
     cur.style.left = e.clientX + 'px';
     cur.style.top = e.clientY + 'px';
   });
