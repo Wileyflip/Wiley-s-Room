@@ -33,6 +33,7 @@
       transition: width .22s, height .22s;
       mix-blend-mode: multiply;
     }
+    @media (hover: none) { #cursor { display: none; } }
     #cursor.big { width: 48px; height: 48px; }
 
     /* GRAIN */
@@ -436,22 +437,32 @@
       nav { padding: 16px 20px; }
       .lang-toggle { right: 20px; padding: 4px 10px; font-size: 0.55rem; }
       .cover-visual { display: none; }
+      .cover-main { grid-template-columns: 1fr; }
       .cover-text { padding: 36px 20px; }
       .cover-cta-row { flex-direction: column; gap: 12px; }
       .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 16px 24px; }
       .cover-tag-stack { display: none; }
       .services-grid { grid-template-columns: 1fr; }
       .svc { box-shadow: none; padding: 36px 20px; border-bottom: 1px solid var(--rule); }
-      .team-card { padding: 40px 20px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .team-card { padding: 40px 20px; border-bottom: 1px solid var(--rule); }
       .team-card .tc-photo { width: 45%; }
       .tc-name { font-size: clamp(2rem, 8vw, 3rem); }
-      .quote-band { padding: 40px 20px; }
+      .quote-band { padding: 40px 20px; grid-template-columns: 1fr; gap: 0; }
+      .qb-rule { display: none; }
       .qb-text { font-size: clamp(1.2rem, 5vw, 1.8rem); }
-      .spotify-featured-item { padding: 28px 20px; }
-      .spotify-item { padding: 28px 20px; }
-      .video-wrap { padding: 28px 20px; }
+      .spotify-featured { grid-template-columns: 1fr !important; }
+      .spotify-featured-item { border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 20px; }
+      .spotify-featured-item:last-child { border-bottom: none; }
+      .spotify-grid { grid-template-columns: 1fr !important; }
+      .spotify-item { border-right: none !important; border-bottom: 1px solid var(--rule); padding: 28px 20px; }
+      .video-grid { grid-template-columns: 1fr !important; }
+      .video-wrap { border-right: none !important; border-bottom: 1px solid var(--rule); padding: 28px 20px; }
+      .video-wrap:last-child { border-bottom: none; }
       .ref-divider { padding: 32px 20px; font-size: 0.75rem; }
-      footer { padding: 28px 20px; gap: 12px; }
+      footer { grid-template-columns: 1fr; padding: 28px 20px; gap: 12px; text-align: center; }
+      .footer-links { justify-content: center; }
+      .footer-copy { text-align: center; }
       .footer-disclaimer { font-size: 0.5rem; line-height: 1.6; }
       .review-item { padding: 0 20px; font-size: 0.62rem; }
     }
@@ -499,12 +510,12 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
     .section-head span{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid)}
     
     /* SPOTIFY FEATURED */
-    .spotify-featured{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);width:100%}
+    .spotify-featured{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);width:100%;overflow:hidden}
     .spotify-featured-item{padding:40px 56px;border-right:1px solid var(--rule)}
     .spotify-featured-item:last-child{border-right:none}
     
     /* SPOTIFY GRID */
-    .spotify-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);width:100%}
+    .spotify-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);width:100%;overflow:hidden}
     .spotify-item{padding:40px 56px;border-right:1px solid var(--rule)}
     .spotify-item:nth-child(even){border-right:none}
     
@@ -513,7 +524,7 @@ justify-content:space-between;align-items:baseline;padding:64px 56px 28px;border
     .spotify-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem}
     
     /* VIDEOS */
-    .video-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);width:100%}
+    .video-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);width:100%;overflow:hidden}
     .video-wrap{padding:40px 56px;border-right:1px solid var(--rule)}
     .video-wrap:last-child{border-right:none}
     .video-meta{margin-bottom:16px}
