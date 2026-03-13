@@ -413,6 +413,7 @@
       .svc:hover { box-shadow: none; }
       .team-grid { grid-template-columns: 1fr; }
       .team-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 48px 24px; }
+      .team-card .tc-photo { width: 38%; }
       .quote-band { grid-template-columns: 1fr; padding: 48px 24px; gap: 0; }
       .qb-rule { display: none; }
       .spotify-featured { grid-template-columns: 1fr; }
@@ -432,22 +433,27 @@
     }
 
     @media(max-width:600px){
+      nav { padding: 16px 20px; }
+      .lang-toggle { right: 20px; padding: 4px 10px; font-size: 0.55rem; }
+      .cover-visual { display: none; }
       .cover-text { padding: 36px 20px; }
       .cover-cta-row { flex-direction: column; gap: 12px; }
       .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 16px 24px; }
       .cover-tag-stack { display: none; }
       .services-grid { grid-template-columns: 1fr; }
-      .svc { box-shadow: none; padding: 40px 20px; }
+      .svc { box-shadow: none; padding: 36px 20px; border-bottom: 1px solid var(--rule); }
       .team-card { padding: 40px 20px; }
+      .team-card .tc-photo { width: 45%; }
+      .tc-name { font-size: clamp(2rem, 8vw, 3rem); }
       .quote-band { padding: 40px 20px; }
       .qb-text { font-size: clamp(1.2rem, 5vw, 1.8rem); }
       .spotify-featured-item { padding: 28px 20px; }
       .spotify-item { padding: 28px 20px; }
       .video-wrap { padding: 28px 20px; }
       .ref-divider { padding: 32px 20px; font-size: 0.75rem; }
-      footer { padding: 28px 20px; }
+      footer { padding: 28px 20px; gap: 12px; }
       .footer-disclaimer { font-size: 0.5rem; line-height: 1.6; }
-      .review-item { padding: 0 28px; font-size: 0.65rem; }
+      .review-item { padding: 0 20px; font-size: 0.62rem; }
     }
   
     /* Referenzen */
